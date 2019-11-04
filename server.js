@@ -24,3 +24,10 @@ app.use(bodyParser.json());
 
 //passport middleware
 app.use(passport.initialize());
+require('./config/passport')(passport)
+
+//routes
+
+//server
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`server has started on ${port}`))
